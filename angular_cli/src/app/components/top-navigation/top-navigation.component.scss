@@ -1,0 +1,39 @@
+.top-navgation {
+  background-color: #4d2e55;
+  color: #f2f3f8;
+}
+
+.top-navgation a {
+  background-color: #4d2e55;
+  color: #f2f3f8;
+}
+
+
+.top-navgation .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+.top-navgation__logo h5 {
+  color: #6af0b5;
+  font-weight: 600;
+}
+
+.top-navgation__logo h6 {
+  font-weight: 600;
+}
+
+.top-navgation__power-off {
+  color: #6af0b5 !important;
+}
+
+
+@media (min-width: 576px) {
+  .navbar-toggler {
+    display: none;
+  }
+
+  .top-navgation__logo {
+    margin-left: 20px;
+  }
+}
+

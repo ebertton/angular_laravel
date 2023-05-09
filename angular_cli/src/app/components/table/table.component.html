@@ -1,0 +1,29 @@
+<!--TABELA REUTILIZAVEL, JÁ PERSONALIZADA COM CSS E ESTILO PADRÃO DE LAYOUT-->
+<div class="row">
+  <div class="col-md-12 table-responsive">
+    <table class="table table-sm">
+      <thead>
+      <tr>
+        <th scope="col" class="ps-3" *ngFor="let head of HeadArray">{{ head.Head == 'id' ? 'Ação' : head.Head }} </th>
+      </tr>
+      </thead>
+      <tbody>
+      <!--O PRIMEIRO NGFOR TRATA AS COLUNAS DO HEADER      -->
+      <tr *ngFor="let item of GridArray;let sr=index">
+        <!-- O SEGUNDO NFGOR TRATA DE POPULAR AS COLUNAS         -->
+        <td *ngFor="let head of HeadArray">
+          <div class="mt-2 ms-3" *ngIf="head.FieldName != '' && head.FieldName != 'id'">
+            {{item[head.FieldName]}}
+          </div>
+<!-- AQUI FICA OS BOTÕES DE AÇÕES, ATUALMENTE EXISTE APENAS UM BOTÃO PARA ABRIR UM MODAL          -->
+          <button *ngIf="head.FieldName == 'id'" type="button" class="btn btn-success form-control rounded-pill"
+                  data-bs-toggle="modal" data-bs-target="#modalComponent"
+                  (click)="validate(head.FieldName == 'id' ? item[head.FieldName]: '')">
+            Validar
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

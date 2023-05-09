@@ -1,0 +1,23 @@
+<!-- Top navigation BARRA DE NAVEGAÇÃO SUPERIOR UTILIZADA NO LAYOUT-->
+<nav class="navbar top-navgation d-flex justify-content-between">
+  <div class="col-6">
+    <div class="d-flex  justify-content-between">
+      <button class="navbar-toggler" id="sidebarToggle" (click)="(togglerMenu())">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+      <div class="col-lg-3 col-sm-4 d-flex flex-column justify-content-center text-center top-navgation__logo">
+        <h6 class="pb-0 mb-0">point</h6>
+        <h5 class="p-0 mt-0">register</h5>
+      </div>
+      <div class="col-lg-9 col-sm-8">
+        <a class="nav-link mt-1">Painel Administrativo</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 d-flex justify-content-end">
+    <a class="nav-link usuario-logado" href="#">Bem-vindo</a>
+    <a href="#" class="nav-link top-navgation__power-off mt-0">
+      <i class="power-off fa fa-power-off" aria-hidden="true"></i>
+    </a>
+  </div>
+</nav>

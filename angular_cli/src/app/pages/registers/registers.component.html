@@ -1,0 +1,81 @@
+<app-page-title title="Cadastros para validação"></app-page-title>
+
+
+<app-card>
+  <div class="d-flex flex-row justify-content-between">
+    <div class="col-8">
+      <app-input
+        [control]="formGroupSearch.controls.field"
+        name="name"
+        label="Buscar"
+        (onSearch)="search($event)">
+      </app-input>
+    </div>
+    <div class="col-3">
+      <app-select name="validated"
+                  label="Filtrar por status"
+                  [control]="formGroupSearch.controls.validated"
+                  [options]="validatedOptions"
+                  (selectionChange)="filterSearch($event)"
+      ></app-select>
+    </div>
+
+
+  </div>
+
+</app-card>
+
+
+<app-table [HeadArray]="headArray"
+           [GridArray]="employeesList"
+           (onValidate)="getEmployee($event)">
+</app-table>
+
+
+<app-modal [title]="'Validar registro do funcionário'">
+  <form (submit)="submitForm($event)">
+    <app-input
+      [control]="formGroup.controls.name"
+      inputId="name"
+      label="Nome"
+    >
+    </app-input>
+    <app-input
+      [control]="formGroup.controls.email"
+      inputId="email"
+      label="E-mail">
+    </app-input>
+    <app-input
+      [control]="formGroup.controls.cpf"
+      inputId="cpf"
+      label="CPF"
+      [mask]="'000.000.000-00'">
+    </app-input>
+    <app-input
+      [control]="formGroup.controls.phone"
+      inputId="phone"
+      label="Telefone"
+      [mask]="'(00) 00000-0000'">
+    </app-input>
+    <div class="pt-3 pb-3">
+      <h5 class="text-center">Conhecimentos</h5>
+      <app-list-group [items]="myItems"></app-list-group>
+    </div>
+    <div class="mt-3 col-12 d-flex flex-row justify-content-between ">
+      <div class="col-5">
+        <app-button [classstyle]="'btn-success'" [validated]="'Validado'" (onValidate)="setValidate($event)">
+          Validar
+        </app-button>
+      </div>
+
+      <div class="col-5">
+        <app-button [classstyle]="'btn-outline-danger'" [validated]="'Não validado'" (onValidate)="setValidate($event)">
+          Não validar
+        </app-button>
+      </div>
+
+    </div>
+
+  </form>
+</app-modal>
+

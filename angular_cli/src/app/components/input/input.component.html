@@ -1,0 +1,23 @@
+<!--md-textbox CLASS UTILIZADA PARA ESTILIZAR OS INPUTS-->
+<div class="md-textbox">
+  <!--  CLASS HAS-VALUE UTILIZADA PARA CASO TENHA ALGUM VALOR NO CAMPO INPUT O LABEL NÃO VOLTE PARA O MEIO DO CAMPO -->
+  <!--  MASK UTILIZADO PARA EM CASO QUE SEJA NECESSARIO UTILIZAR MASCARA A MESMA SER ENVIADA ATRAVÉS DO COMPONENT PAI -->
+  <!-- [dropSpecialCharacters]="false" POR PADRÃO ELE ESTA SETADO COMO FALSO MAS SE ATRAVÉS DO COMPONENT PAI SETAR ELE COMO TRUE,
+  O MESMO PASSA FIXAR AS MASCARAS NOS VALUES, CASO CONTRATIO OS VALUES RETORNAM APENAS O VALORES SEM MASCARA -->
+
+  <input [ngClass]="control.value.length > 0 ? 'has-value' : ''"
+         (ngModelChange)="search($event)"
+         [formControl]="control"
+         type="text"
+         [mask]="mask"
+         [dropSpecialCharacters]="false"
+         [id]="inputId"
+         [ngClass]="control.invalid && control.dirty && control.touched ? 'border-danger' : '' "/>
+  <label [for]="inputId">{{ label }}</label>
+</div>
+<!--AQUI É ONDE SÃO EXIBIDAS A S MESAGENS DE VALIDAÇÕES DOS INPULTS-->
+<ng-container *ngIf="control.invalid && control.dirty && control.touched">
+  <div *ngFor="let err of control.errors | keyvalue" class="text-danger small">
+    {{ errorMessages[err.key] }}
+  </div>
+</ng-container>

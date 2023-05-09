@@ -1,0 +1,7 @@
+<!--UM SIMPLES COMPONENTE SELECT REUTILIZAVEL EM SITUAÇÕES EM QUE NÃO HA NECESSIDADE DE UM MULTISELECT, -->
+<div class="md-textbox">
+  <select id="mySelect" [formControl]="control" (change)="onSelectionChange()" [ngClass]="control.value.length > 0 ? 'has-value' : ''">
+    <option *ngFor="let option of options" [value]="option">{{option}}</option>
+  </select>
+  <label for="{{name}}">{{label}}</label>
+</div>

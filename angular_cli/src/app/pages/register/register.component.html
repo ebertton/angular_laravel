@@ -1,0 +1,58 @@
+<!--PAGINA RESPONSAVEL POR ALOCAR OS COMPONENTES NECESSARIOS PARA EXECUÇÃO DO FORMULÁRIO -->
+<app-page-title [title]="'Registro de colaborador'"></app-page-title>
+<div class="col-12">
+  <app-card>
+    <form (submit)="submitForm($event)">
+      <app-input
+        [control]="formGroup.controls.name"
+        inputId="name"
+        label="Nome">
+      </app-input>
+      <app-input
+        [control]="formGroup.controls.email"
+        inputId="email"
+        label="E-mail">
+      </app-input>
+      <app-input
+        [control]="formGroup.controls.cpf"
+        inputId="cpf"
+        label="CPF"
+        [mask]="'000.000.000-00'">
+      </app-input>
+      <app-input
+        [control]="formGroup.controls.phone"
+        inputId="phone"
+        label="Telefone"
+        [mask]="'(00) 00000-0000'">
+      </app-input>
+      <div class="col-12">
+        <div class="col-12" *ngIf="myOptions">
+          <!-- COMPONENTE RESPONSAVEL POR CRIAR UM MULTPLESELECT JÁ TOTALMENTE ESTILIZADO          -->
+          <ngx-bootstrap-multiselect
+            [options]="myOptions"
+            [formControl]="formGroup.controls.knowledge"
+
+            [settings]="mySettings"
+          ></ngx-bootstrap-multiselect>
+          <!-- MESSAGEM DE VALIDAÇÃO ESPECIFICA DESSE COMPONENTE-->
+          <div
+            *ngIf="formGroup.controls.knowledge.errors && formGroup.controls.knowledge.touched && !formGroup.controls.knowledge.pristine && (!formGroup.controls.knowledge.value || formGroup.controls.knowledge.value.length === 0)">
+            <small class="text-danger"
+                   *ngIf="formGroup.controls.knowledge?.value && formGroup.controls.knowledge?.value.length === 0">Por
+              favor, selecione pelo menos uma opção.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-3">
+        <app-button classstyle="btn-success" [disabled]="!formGroup.valid">
+          Enviar
+        </app-button>
+      </div>
+    </form>
+  </app-card>
+
+
+</div>
+
+

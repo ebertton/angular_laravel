@@ -1,0 +1,12 @@
+<app-top-navigation (evento)="recebeInformacao($event)"></app-top-navigation>
+<div class="d-flex">
+  <app-sidebar [toggler]="toggler"></app-sidebar>
+  <div class="container">
+    <router-outlet></router-outlet>
+
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+

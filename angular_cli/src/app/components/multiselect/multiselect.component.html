@@ -1,0 +1,9 @@
+<!--FOI INICIADO A IMPLEMENTAÇÃO, PORÉM FOI DESCONTINUADO, PARA SER IMPLEMENTADO O ngx-bootstrap-multiselect". MUITO MELHOR PARA PERSONALIZAR E JÁ TRAS OTIMAS FUNÇÕES PARA MULTISELEÇÃO -->
+<div class="md-textbox">
+  <select id="mySelect"  multiple [formControl]="control" (change)="onSelectionChange()">
+    <option *ngFor="let option of options" [value]="option">{{option}}</option>
+  </select>
+  <label for="{{name}}">{{label}}</label>
+</div>
+
+
