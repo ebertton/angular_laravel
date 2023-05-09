@@ -1,4 +1,5 @@
 # Sobre o Projeto
+![app_resized](https://user-images.githubusercontent.com/16254922/236989477-79a01e97-94c8-4053-9a44-bc7739ceee6a.png)
 
 Com base nos requisitos mínimos desenvolvi uma aplicação de registro de colaborador. 
 Ela atende todos os requisitos solicitados, tentando aplicar da melhor forma possível para fazer sentido no fluxo de navegação.
