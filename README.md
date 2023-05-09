@@ -69,7 +69,7 @@ A API ficará disponível na seguinte URL [http://localhost](http://localhost).\
 
 
 
-Documentação da API URL [https://documenter.getpostman.com/view/20378449/2s93eYWYWo(https://documenter.getpostman.com/view/20378449/2s93eYWYWo).\
+Documentação da API URL [https://documenter.getpostman.com/view/20378449/2s93eYWYWo](https://documenter.getpostman.com/view/20378449/2s93eYWYWo).\
 
 Modelagem do banco de dados [https://drive.google.com/file/d/1GiVpWxYAKov65bwSQDiln3cLE6Ycvbu5/view?usp=sharing](https://drive.google.com/file/d/1GiVpWxYAKov65bwSQDiln3cLE6Ycvbu5/view?usp=sharing).\
 
